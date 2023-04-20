@@ -31,34 +31,44 @@ class _InsertExpenseState extends State<InsertExpense> {
       body: Padding(
         padding: EdgeInsets.all(20.0),
         child: ListView(
+          shrinkWrap: true,
           children: [
-            ListTile(
-              title: Text("Receita"),
-              leading: Radio<Types>(
-                value: Types.receita,
-                groupValue: type,
-                onChanged: (Types? value) {
-                  setState(() {
-                    if (value != null) {
-                      type = value;
-                    }
-                  });
-                },
-              ),
-            ),
-            ListTile(
-              title: Text("Despesa"),
-              leading: Radio<Types>(
-                value: Types.despesa,
-                groupValue: type,
-                onChanged: (Types? value) {
-                  setState(() {
-                    if (value != null) {
-                      type = value;
-                    }
-                  });
-                },
-              ),
+            Row(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Expanded(
+                  child: ListTile(
+                    title: Text("Receita"),
+                    leading: Radio<Types>(
+                      value: Types.receita,
+                      groupValue: type,
+                      onChanged: (Types? value) {
+                        setState(() {
+                          if (value != null) {
+                            type = value;
+                          }
+                        });
+                      },
+                    ),
+                  ),
+                ),
+                Expanded(
+                  child: ListTile(
+                    title: Text("Despesa"),
+                    leading: Radio<Types>(
+                      value: Types.despesa,
+                      groupValue: type,
+                      onChanged: (Types? value) {
+                        setState(() {
+                          if (value != null) {
+                            type = value;
+                          }
+                        });
+                      },
+                    ),
+                  ),
+                ),
+              ],
             ),
             SizedBox(
               height: 15,
@@ -117,10 +127,7 @@ class _InsertExpenseState extends State<InsertExpense> {
                     return;
                   }
                   final newExpense = Despesa(
-                      descricao: description,
-                      tipo: type.toString(),
-                      valor: value);
-
+                      descricao: description, tipo: type.name, valor: value);
                   database.insertFinance(
                       year: year,
                       month: month.padLeft(2, "0"),
