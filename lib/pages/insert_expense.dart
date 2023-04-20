@@ -9,9 +9,13 @@ class InsertExpense extends StatefulWidget {
   State<InsertExpense> createState() => _InsertExpenseState();
 }
 
+enum Types { receita, despesa }
+
 class _InsertExpenseState extends State<InsertExpense> {
   var descriptionController = TextEditingController();
-  var typeController = TextEditingController();
+
+  // var typeController = TextEditingController();
+  var type = Types.receita;
   var valueController = TextEditingController();
   var monthController = TextEditingController();
   var yearController = TextEditingController();
@@ -28,18 +32,41 @@ class _InsertExpenseState extends State<InsertExpense> {
         padding: EdgeInsets.all(20.0),
         child: ListView(
           children: [
-            TextField(
-              controller: descriptionController,
-              decoration: InputDecoration(
-                  labelText: "Descricao", border: OutlineInputBorder()),
+            ListTile(
+              title: Text("Receita"),
+              leading: Radio<Types>(
+                value: Types.receita,
+                groupValue: type,
+                onChanged: (Types? value) {
+                  setState(() {
+                    if (value != null) {
+                      type = value;
+                    }
+                  });
+                },
+              ),
+            ),
+            ListTile(
+              title: Text("Despesa"),
+              leading: Radio<Types>(
+                value: Types.despesa,
+                groupValue: type,
+                onChanged: (Types? value) {
+                  setState(() {
+                    if (value != null) {
+                      type = value;
+                    }
+                  });
+                },
+              ),
             ),
             SizedBox(
               height: 15,
             ),
             TextField(
-              controller: typeController,
+              controller: descriptionController,
               decoration: InputDecoration(
-                  labelText: "Tipo", border: OutlineInputBorder()),
+                  labelText: "Descricao", border: OutlineInputBorder()),
             ),
             SizedBox(
               height: 15,
@@ -74,14 +101,10 @@ class _InsertExpenseState extends State<InsertExpense> {
             ElevatedButton(
                 onPressed: () {
                   final description = descriptionController.text;
-                  final type = typeController.text;
                   final value = valueController.text;
                   final month = monthController.text;
                   final year = yearController.text;
                   if (description.isEmpty) {
-                    return;
-                  }
-                  if (type.isEmpty) {
                     return;
                   }
                   if (value.isEmpty) {
@@ -93,8 +116,10 @@ class _InsertExpenseState extends State<InsertExpense> {
                   if (year.isEmpty || year.length < 4) {
                     return;
                   }
-                  final newExpense =
-                      Despesa(descricao: description, tipo: type, valor: value);
+                  final newExpense = Despesa(
+                      descricao: description,
+                      tipo: type.toString(),
+                      valor: value);
 
                   database.insertFinance(
                       year: year,

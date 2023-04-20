@@ -26,22 +26,22 @@ class _HomePageState extends State<HomePage> {
   void initState() {
     super.initState();
     user = authService.getCurrentUser();
-    if (user != null) {
-      database
-          .getFinancesByDate(userId: user!.uid, year: "2021", month: "11")
-          .onValue
-          .listen((event) {
-        final desp = event.snapshot.children.map((item) {
-          return Despesa.fromJson(item.value as Map);
-        }).toList();
-        setState(() {
-          expenses = desp;
-        });
-      });
+    // if (user != null) {
+    //   database
+    //       .getFinancesByDate(userId: user!.uid, year: "2021", month: "11")
+    //       .onValue
+    //       .listen((event) {
+    //     final desp = event.snapshot.children.map((item) {
+    //       return Despesa.fromJson(item.value as Map);
+    //     }).toList();
+    //     setState(() {
+    //       expenses = desp;
+    //     });
+    //   });
       // final d = Despesa(descricao: "TESTe", tipo: "TESTE", valor: "550");
       // database.insertFinance(
       //     year: "2022", month: "01", userId: user!.uid, despesa: d.toJson());
-    }
+    // }
   }
 
   @override
