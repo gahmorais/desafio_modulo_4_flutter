@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "9807549374",
+    "firebase_url": "https://flutter-cloud-firestore-f68b1-default-rtdb.firebaseio.com",
+    "project_id": "flutter-cloud-firestore-f68b1",
+    "storage_bucket": "flutter-cloud-firestore-f68b1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9807549374:android:529a426239061a0c961fef",
+        "android_client_info": {
+          "package_name": "br.com.alura.flutter_firebase_firestore_first"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9807549374-qurdjnhbd7kc6go1vce41t8vitvflm9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLXXPieSbLKX1DCllAeEwbLP2xZPzSMwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9807549374-qurdjnhbd7kc6go1vce41t8vitvflm9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "9807549374-m0s7opukb6titvi2pggs182s7i70bi4r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.alura.flutterFirebaseFirestoreFirst"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:9807549374:android:f30465e5f54d1f0e961fef",
+        "android_client_info": {
+          "package_name": "com.example.desafio_modulo_4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "9807549374-qurdjnhbd7kc6go1vce41t8vitvflm9d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBLXXPieSbLKX1DCllAeEwbLP2xZPzSMwE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "9807549374-qurdjnhbd7kc6go1vce41t8vitvflm9d.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "9807549374-m0s7opukb6titvi2pggs182s7i70bi4r.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "br.com.alura.flutterFirebaseFirestoreFirst"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
